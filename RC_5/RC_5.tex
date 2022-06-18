@@ -123,11 +123,11 @@
         \end{aligned}
       \end{equation*}
 
-    \item \textbf{Comfiguration}
+    \item \textbf{Configuration}
       \begin{enumerate}[label = \arabic*.]
         \item Set the PWM period by writing to the selected timer period register (\verb|PRy|).
         \item Set the PWM duty cycle by writing to the \verb|OCxRS| register.
-        \item \cprotect\textbf{Write the \verb|OxCR| register with the initial duty cycle.}
+        \item \cprotect\textbf{Write the \verb|OCxR| register with the initial duty cycle.}
         \item Enable interrupts, if required, for the timer and Output Compare modules. The output compare interrupt is required for PWM Fault pin utilization.
         \item Configure the Output Compare module for one of two PWM Operation modes by writing to the Output Compare mode bits, \verb|OCM<2:0>| (\verb|OCxCON<2:0>|).
         \item Set the \verb|TMRy| prescale value and enable the time base by setting \verb|TON| (\verb|TxCON<15>|)\verb| = 1|.
