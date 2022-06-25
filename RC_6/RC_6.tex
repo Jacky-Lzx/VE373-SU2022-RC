@@ -247,7 +247,7 @@
             \item Specify the interrupt priority and subpriority.
             \item Also, select the Transmit Interrupt mode by writing to the \verb|UTXISEL| bits (\verb|UxSTA<15:14>|).
           \end{enumerate}
-        \item Enable the transmission by setting the UTXEN bit (UxSTA<10>), which also sets the UxTXIF bit. The UxTXIF bit should be cleared in the software routine that services the UART transmit interrupt.
+        \item Enable the transmission by setting the \verb|UTXEN| bit (\verb|UxSTA<10>|), which also sets the UxTXIF bit. The UxTXIF bit should be cleared in the software routine that services the UART transmit interrupt.
         \item Enable the UART module by setting the \verb|ON| bit (\verb|UxMODE<15>|).
         \item Load data to the \verb|UxTXREG| register (starts transmission).
       \end{enumerate}
@@ -267,8 +267,8 @@
       \begin{itemize}[leftmargin = 0.5cm]
         \item \verb|UxRXIF|, determined by \verb|RXISEL<1:0>| (\verb|UxSTA<7:6>|)
         \item Before clearing the corresponding \verb|UxRXIF| flag bit, the user application must ensure that the interrupt condition specified by the \verb|URXISEL| control bits is no longer true.
-        \item \verb|RXDA| (and \verb|UxRXIF|) indicate the status of the \verb|UxRXREG|
-        \item \verb|RXDA| (\verb|UxSTA<0>|) indicates whether the receive buffer has data or is empty. Read-only
+        \item \verb|URXDA| (and \verb|UxRXIF|) indicate the status of the \verb|UxRXREG|
+        \item \verb|URXDA| (\verb|UxSTA<0>|) indicates whether the receive buffer has data or is empty. Read-only
         \item \verb|RIDLE| (\verb|UxSTA<4>|) shows the status of the \verb|UxRSR| register. Read-only
       \end{itemize}
 
